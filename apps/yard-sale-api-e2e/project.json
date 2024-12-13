@@ -1,0 +1,17 @@
+{
+  "name": "yard-sale-api-e2e",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "application",
+  "implicitDependencies": ["yard-sale-api"],
+  "targets": {
+    "e2e": {
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/{e2eProjectRoot}"],
+      "options": {
+        "jestConfig": "apps/yard-sale-api-e2e/jest.config.ts",
+        "passWithNoTests": true
+      },
+      "dependsOn": ["yard-sale-api:build"]
+    }
+  }
+}
