@@ -1,0 +1,33 @@
+---
+services:
+  yard-sale-api:
+    restart: always
+    build:
+      dockerfile: ./.devcontainer/Dockerfile
+      context: .
+      args:
+        PORT: 3000
+        APP_NAME: yard-sale-api
+    ports:
+      - 3000:3000
+    volumes:
+      - ./:/app
+      - yard-sale-api-node_modules:/app/node_modules
+  yard-sale-app:
+    restart: always
+    build:
+      dockerfile: ./.devcontainer/Dockerfile
+      context: .
+      args:
+        PORT: 4200
+        APP_NAME: yard-sale-app
+        EXTRA_ARGS: --host 0.0.0.0
+    ports:
+      - 4200:4200
+    volumes:
+      - ./:/app
+      - yard-sale-app-node_modules:/app/node_modules
+
+volumes:
+  yard-sale-api-node_modules:
+  yard-sale-app-node_modules:
