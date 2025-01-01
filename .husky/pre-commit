@@ -1,0 +1,2 @@
+pnpm tsc --project tsconfig.base.json --noEmit
+pnpx lint-staged --concurrent false --relative
