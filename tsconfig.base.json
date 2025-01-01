@@ -15,7 +15,9 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@world-travel/item-list": ["libs/yard-sale-app/item-list/src/index.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }
